@@ -1,0 +1,91 @@
+    * {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .heading {
+        background-color: deepskyblue;
+        text-align: center;
+        padding: 10px;
+        font-size: 40px;
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+
+    .btn a {
+        text-decoration: none;
+    }
+
+    .add-product-btn,
+    .logout-btn {
+        background-color: orange;
+        padding: 10px 15px;
+        color: white;
+        border-radius: 5px;
+        margin-left: 200px;
+    }
+
+
+    .logout-btn {
+        background-color: red;
+        margin-left: 950px;
+    }
+
+    table {
+        margin: 10px auto;
+        border-radius: 3px;
+        border: 1px solid;
+    }
+
+    table th,
+    td {
+        padding: 10px;
+    }
+
+    table th a {
+        color: black;
+        margin-left: 10px;;
+    }
+
+    table tr td .edit-product,
+    .delete-product {
+        background-color: green;
+        text-decoration: none;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    table tr td .delete-product {
+        background-color: red;
+    }
+
+    .search {
+        margin-top: 50px;
+        margin-left: 260px;
+        ;
+    }
+
+    .search input,
+    button {
+        padding: 5px;
+        border-radius: 5px;
+    }
+
+    .search button {
+        margin-left: 8px;
+        background-color: orange;
+        border: none;
+        color: white;
+        padding: 7px 10px;
+        ;
+        ;
+    }
+
+    #no-data {
+        margin-left: 550px;
+        margin-top: 50px;
+    }

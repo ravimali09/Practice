@@ -1,0 +1,78 @@
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    body {
+        background-color: aliceblue;
+    }
+
+    .form-div {
+        margin: 100px auto;
+        width: 40%;
+        padding: 30px 5px;
+        border-radius: 5px;
+        background-color: rgb(216, 252, 255);
+        box-shadow: 2px 4px gray;
+
+    }
+
+    .form-div h2 {
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .inp-div {
+        margin-top: 10px;
+        padding: 0 15px;
+    }
+
+    .inp-div input {
+        padding: 3px;
+        border: 1px solid;
+        border-radius: 5px;
+        margin-left: 48px;
+        width: 75%;
+    }
+
+    .inp-div button {
+        background-color: aqua;
+        width: 50%;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        margin-left: 25%;
+    }
+
+    .inp-div p {
+        margin-left: 30%;
+    }
+
+    .inp-div a {
+        text-decoration: none;
+    }
+
+    .gender,
+    .lang,
+    .city {
+        padding: 0 15px;
+        margin-top: 10px
+    }
+
+    .gender input {
+        margin-left: 37px;
+    }
+
+    .lang input {
+        margin-left: 20px;
+    }
+
+    .city select {
+        margin-left: 60px;
+    }
+
+    .err,
+    #err {
+        color: red;
+    }
