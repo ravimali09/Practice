@@ -17,22 +17,7 @@ session_start();
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>AJAX CRUD Operation</title>
 </head>
-<style>
-    ul a {
-        text-decoration: none;
-        color: black;
-    }
 
-    ul li {
-        border: 1px solid;
-        padding: 5px 10px;
-        display: inline;
-    }
-
-    .active {
-        background-color: red;
-    }
-</style>
 
 <body>
     <div class="modal fade" id="addEmployee" tabindex="-1" aria-labelledby="exampleModalLabel">
@@ -43,8 +28,9 @@ session_start();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="" id="form" enctype="multipart/form-data">
+                    <form action="" id="form">
                         <div class="mb-3">
+                            <input type="hidden" name="page" id="page">
                             <label for="name" class="form-label">Name :</label>
                             <input type="text" class="form-control" id="name" aria-describedby="emailHelp"
                                 placeholder="Enter Name" name="name">
@@ -59,7 +45,6 @@ session_start();
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Gender :</label>
-                            <label>Gender :</label>
                             <input type="radio" name="gender" id="male" value="Male"> <label for="male">Male</label>
                             <input type="radio" name="gender" id="female" value="Female"> <label
                                 for="female">Female</label>
@@ -80,7 +65,7 @@ session_start();
 
                         </div>
                         <div class="mb-3">
-                            <label for="" class="form-label">City :</label>
+                            <label for="" class="form-label" id="cityLabel">City :</label>
                             <select name="city" id="city" class="form-control">
                                 <option value="">Select City</option>
                                 <option value="Ahmedabad">Ahmedabad</option>
@@ -102,7 +87,7 @@ session_start();
                     </form>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="save"
+                        <button type="submit" class="btn btn-primary"  id="save"
                             onclick="insertEmployee()">Submit</button>
                     </div>
                 </div>
@@ -125,12 +110,14 @@ session_start();
                             <input type="hidden" id="page">
                             <label for="edit-name" class="form-label">Name :</label>
                             <input type="text" class="form-control" id="edit-name" aria-describedby="emailHelp"
-                                placeholder="Enter Name">
+                                placeholder="Enter Name" name="name">
+                            <span class="text-danger remove" id="erreditname"></span>
+
                         </div>
                         <div class="mb-3">
                             <label for="edit-email" class="form-label">Email :</label>
                             <input type="email" class="form-control" id="edit-email" aria-describedby="emailHelp"
-                                placeholder="Enter Email">
+                                placeholder="Enter Email" name="email">
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label">Gender :</label>
@@ -162,7 +149,11 @@ session_start();
                                 <option value="Surat">Surat</option>
                             </select>
                         </div>
-
+                        <div class="mb-3">
+                            <label for="" class="form-label">Upload Image :</label>
+                            <input type="file" class="form-control" id="edit-image" name="image">
+                            <p><span class="text-danger remove" id="errimage"></span></p>
+                        </div>
 
                     </form>
                     <div class="modal-footer">
@@ -231,32 +222,11 @@ session_start();
             </select>
         </div>
         <div class="d-flex justify-content-center" id="msg">
-            <?php
-            if (isset($_SESSION['update'])) {
-            ?>
-                <p class="text-success border border-success p-2 rounded msg"><?php echo $_SESSION['update']; ?></p>
-            <?php
-                unset($_SESSION['update']);
-            }
 
-            if (isset($_SESSION['delete'])) {
-            ?>
-                <p class="text-danger border border-danger p-2 rounded msg"><?php echo $_SESSION['delete']; ?></p>
-            <?php
-                unset($_SESSION['delete']);
-            }
-            if (isset($_SESSION['insert'])) {
-            ?>
-                <p class="text-success border border-success p-2 rounded msg"><?php echo $_SESSION['insert']; ?></p>
-            <?php
-                unset($_SESSION['insert']);
-            }
-            ?>
         </div>
         <div id="show_records" class="d-flex justify-content-center">
-
-
-
+        </div>
+        <div id="pagination" class="d-flex justify-content-center">
 
         </div>
 
